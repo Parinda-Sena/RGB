@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title> Raster Data </title>
+    </head>
+    <body>
+        <canvas id="canvas" width="200" height="200"
+style="width:500px; height:500px; border:1px solid #000; image-rendering: pixelated;">
+        </canvas>
+
+        <script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const imageData = ctx.createImageData(canvas.width, canvas.height);
+const pixels = imageData.data; // Array of color [R,G,B,A, R,G,B,A, ...]
+pixels[0] = 255 //red
+pixels[1] = 0 //green
+pixels[2] = 0//blue
+pixels[3] = 255//Alpha
+
+pixels[4] = 0 //red
+pixels[5] = 255 //green
+pixels[6] = 0//blue
+pixels[7] = 255//Alpha
+
+pixels[8] = 0 //red
+pixels[9] = 0 //green
+pixels[10] = 255//blue
+pixels[11] = 255//Alpha
+
+ctx.putImageData(imageData, 0, 0);
+</script>
+    </body>
+</html>
